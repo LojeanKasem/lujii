@@ -1,0 +1,89 @@
+.actionBtn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.actionBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.actionBtn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.actionBtn:active {
+  transform: scale(0.98);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #1a1a2e, #0f3460);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(26, 26, 46, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(26, 26, 46, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btnPrimary {
+    background: linear-gradient(135deg, #2a2a3e, #1f4670);
+    box-shadow: 0 4px 15px rgba(42, 42, 62, 0.5);
+  }
+
+  .btnPrimary:hover {
+    box-shadow: 0 8px 25px rgba(42, 42, 62, 0.6);
+  }
+}
+
+.btnSecondary {
+  background: var(--background);
+  color: var(--foreground);
+  border: 2px solid currentColor;
+}
+
+.btnSecondary:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btnSecondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btnSecondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .actionBtn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+}

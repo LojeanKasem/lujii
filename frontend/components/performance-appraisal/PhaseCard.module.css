@@ -1,0 +1,134 @@
+.phaseCard {
+  background: var(--background);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-color-scheme: dark) {
+  .phaseCard {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.phaseCard:hover {
+  transform: translateX(8px);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .phaseCard:hover {
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.phaseHeader {
+  padding: 32px 40px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .phaseHeader {
+    background: linear-gradient(135deg, #2a2a3e 0%, #1f4670 100%);
+  }
+}
+
+.phaseHeader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.phaseNumber {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.phaseTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.phaseDescription {
+  opacity: 0.9;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+.phaseContent {
+  padding: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .phaseContent {
+    background: #1a1a1a;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .phaseHeader {
+    padding: 24px;
+  }
+
+  .phaseTitle {
+    font-size: 1.5rem;
+  }
+
+  .phaseContent {
+    padding: 24px;
+  }
+
+  .phaseCard:hover {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .phaseTitle {
+    font-size: 1.25rem;
+  }
+
+  .phaseDescription {
+    font-size: 0.95rem;
+  }
+}
